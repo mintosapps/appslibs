@@ -62,7 +62,7 @@ class ToggleImageView : AppCompatImageView, View.OnClickListener {
     }
 
     fun setChecked() {
-        setChecked(false)
+        setChecked(true)
     }
 
     fun setUnchecked() {
@@ -70,7 +70,7 @@ class ToggleImageView : AppCompatImageView, View.OnClickListener {
     }
 
     fun setChecked(callback: Boolean) {
-        mState = Companion.CHECKED
+        mState = CHECKED
         setImage(mCheckedRes)
         if (callback) mCallbacks!!.onChecked()
     }
