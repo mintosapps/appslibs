@@ -5,4 +5,8 @@
         <attr name="src_unchecked" format="reference" />
         <attr name="deaktivate_uncheck" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="CustomFontTextView">
+        <attr name="customFont" format="string"/>
+        <attr name="textStyle" format="integer"/>
+    </declare-styleable>
 </resources>

@@ -6,10 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.spearmintapps.library.CustomFontTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:customFont="developed.TTF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,13 +25,13 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:padding="50dp"
+        app:deaktivate_uncheck="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:src_checked="@drawable/ic_star_black_24dp"
-        app:src_unchecked="@drawable/ic_star_border_black_24dp"
-        app:deaktivate_uncheck="true"/>
+        app:src_unchecked="@drawable/ic_star_border_black_24dp" />
 
     <com.spearmintapps.library.ToggleImageView
         android:id="@+id/toggleImageView_1"
