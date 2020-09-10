@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import com.spearmintapps.library.interfaces.OnStateChangedListener
 
 
-open class ToggleImageView : AppCompatImageView, View.OnClickListener {
+class ToggleImageView : AppCompatImageView, View.OnClickListener {
     private var mState = UNCHECKED
 
     private var mCheckedRes = 0
@@ -19,11 +19,8 @@ open class ToggleImageView : AppCompatImageView, View.OnClickListener {
     constructor(context: Context) : super(context)
 
     constructor (context: Context, attrs: AttributeSet?) : super(context, attrs) {
-        val typedArray = context.theme.obtainStyledAttributes(
-            attrs,
-            R.styleable.ToggleImageView,
-            0, 0
-        )
+        val typedArray =
+            context.theme.obtainStyledAttributes(attrs, R.styleable.ToggleImageView, 0, 0)
         try {
             mCheckedRes = typedArray.getResourceId(R.styleable.ToggleImageView_src_checked, 0)
             mUncheckedRes = typedArray.getResourceId(R.styleable.ToggleImageView_src_unchecked, 0)
