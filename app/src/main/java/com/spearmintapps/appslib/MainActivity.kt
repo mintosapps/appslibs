@@ -1,7 +1,6 @@
 package com.spearmintapps.appslib
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.spearmintapps.library.interfaces.OnStateChangedListener
 import kotlinx.android.synthetic.main.activity_main.*
@@ -13,11 +12,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         toggleImageView.addStateListener(object : OnStateChangedListener {
             override fun onChecked() {
-                Log.d("MAINACTIVITY", "onChecked: ")
+                toggleImageView_1.setUnchecked()
             }
 
             override fun onUnchecked() {
-                Log.d("MAINACTIVITY", "onUnchecked: ")
+                toggleImageView_1.setChecked()
+            }
+        })
+        toggleImageView_1.addStateListener(object : OnStateChangedListener {
+            override fun onChecked() {
+                toggleImageView.setUnchecked()
+            }
+
+            override fun onUnchecked() {
+                toggleImageView.setChecked()
             }
         })
     }

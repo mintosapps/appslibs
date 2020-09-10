@@ -27,6 +27,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:src_checked="@drawable/ic_star_black_24dp"
+        app:src_unchecked="@drawable/ic_star_border_black_24dp"
+        app:deaktivate_uncheck="true"/>
+
+    <com.spearmintapps.library.ToggleImageView
+        android:id="@+id/toggleImageView_1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:padding="50dp"
+        app:deaktivate_uncheck="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124"
+        app:src_checked="@drawable/ic_star_black_24dp"
         app:src_unchecked="@drawable/ic_star_border_black_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

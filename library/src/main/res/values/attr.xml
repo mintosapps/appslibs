@@ -3,5 +3,6 @@
     <declare-styleable name="ToggleImageView">
         <attr name="src_checked" format="reference" />
         <attr name="src_unchecked" format="reference" />
+        <attr name="deaktivate_uncheck" format="boolean" />
     </declare-styleable>
 </resources>

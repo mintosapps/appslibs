@@ -13,7 +13,7 @@ class ToggleImageView : AppCompatImageView, View.OnClickListener {
 
     private var mCheckedRes = 0
     private var mUncheckedRes = 0
-
+    private var deaktivate = false
     private var mCallbacks: OnStateChangedListener? = null
 
     constructor(context: Context) : super(context)
@@ -24,6 +24,8 @@ class ToggleImageView : AppCompatImageView, View.OnClickListener {
         try {
             mCheckedRes = typedArray.getResourceId(R.styleable.ToggleImageView_src_checked, 0)
             mUncheckedRes = typedArray.getResourceId(R.styleable.ToggleImageView_src_unchecked, 0)
+            deaktivate =
+                typedArray.getBoolean(R.styleable.ToggleImageView_deaktivate_uncheck, false)
         } finally {
             typedArray.recycle()
         }
@@ -31,9 +33,9 @@ class ToggleImageView : AppCompatImageView, View.OnClickListener {
         setOnClickListener(this)
     }
 
-
     override fun onClick(v: View?) {
         if (mState == CHECKED) {
+            if (deaktivate) return
             mState = UNCHECKED
 
             setImage(mUncheckedRes)
@@ -62,7 +64,7 @@ class ToggleImageView : AppCompatImageView, View.OnClickListener {
     }
 
     fun setChecked() {
-        setChecked(true)
+        setChecked(false)
     }
 
     fun setUnchecked() {
