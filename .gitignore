@@ -17,3 +17,4 @@ app/libs/
 library/libs/
 /.idea/
 /library/local.properties
+.idea
