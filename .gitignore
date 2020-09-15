@@ -6,6 +6,7 @@
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
+!/.idea/misc.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
@@ -19,3 +20,7 @@ library/libs/
 .idea
 /appslib/local.properties
 gradle.properties
+!/.idea
+appslib/libs/
+.idea/modules/library/
+.idea/shelf/
