@@ -15,6 +15,7 @@
 /.idea/
 app/libs/
 library/libs/
-/.idea/
 /library/local.properties
 .idea
+/appslib/local.properties
+gradle.properties

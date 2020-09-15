@@ -1,5 +1,5 @@
 package com.spearmintapps.library.interfaces
 
 interface OnHorizonTouchListener {
-    fun onHorizonTouch(toLeft: Boolean);
+    fun onHorizonTouch(toLeft: Boolean)
 }

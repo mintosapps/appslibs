@@ -1,0 +1,40 @@
+apply plugin: 'com.jfrog.bintray'
+
+group 'com.github.mintosapps'
+version library_version
+
+project.ext {
+    mavGitUrl = 'https://github.com/mintosapps/appslibs.git'
+    mavProjectName = 'appslibs'
+    mavLibraryLicenses = ["Apache-2.0":'http://www.apache.org/licenses/LICENSE-2.0.txt']
+    mavLibraryDescription = "An Android library for mintos apps"
+    mavPublishToMavenLocal = true
+    mavSiteUrl = 'http://github.com/mintosapps/appslibs'
+}
+
+def properties = new Properties()
+properties.load(new FileInputStream("local.properties"))
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    publications = ['mavenPublish']
+    configurations = ['archives']
+    override = true
+    pkg {
+        repo = 'mintoslib'
+        name = 'appslibs'
+        description = "An Android library for mintos apps"
+        publicDownloadNumbers = true
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/mintosapps/appslibs.git'
+        version {
+            name = library_version
+            desc = "Version ${library_version}"
+            released = new Date()
+            vcsTag = library_version
+        }
+    }
+}
+
+apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'
