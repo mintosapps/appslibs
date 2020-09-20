@@ -1,7 +1,27 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply from: 'publish.gradle'
+apply plugin: 'com.github.panpf.bintray-publish'
+
+def properties = new Properties()
+properties.load(new FileInputStream("local.properties"))
+
+publish {
+    def groupProjectID = properties.getProperty("bintray.groupId")
+    def artifactProjectID = properties.getProperty("bintray.artifactId")
+    def publishVersionID = library_version
+
+    userOrg = properties.getProperty("bintray.user")
+    bintrayUser = properties.getProperty("bintray.user")
+    bintrayKey = properties.getProperty("bintray.apikey")
+    repoName = properties.getProperty("bintray.repoName")
+    groupId = groupProjectID
+    artifactId = artifactProjectID
+    publishVersion = publishVersionID
+    desc = "An Android library for mintos apps"
+    website = 'https://github.com/mintosapps/appslibs'
+    dryRun = false
+}
 
 android {
     compileSdkVersion 29
@@ -36,10 +56,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-}
-
-repositories {
-    mavenCentral()
 }
 
 repositories {

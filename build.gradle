@@ -2,8 +2,8 @@
 buildscript {
     ext.kotlin_version = "1.4.10"
     ext.LIFECYCLE_VERSION = "2.2.0"
-    ext.bintray_version = "1.8.4"
-    ext.library_version = "1.0.1"
+    ext.bintray_release = "1.0.0"
+    ext.library_version = "1.0.5"
     repositories {
         google()
         jcenter()
@@ -11,7 +11,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$bintray_version"
+        classpath "com.github.panpf.bintray-publish:bintray-publish:$bintray_release"
     }
 }
 
